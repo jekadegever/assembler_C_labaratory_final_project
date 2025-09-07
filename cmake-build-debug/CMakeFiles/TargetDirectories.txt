@@ -1,0 +1,3 @@
+/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/cmake-build-debug/CMakeFiles/Final_project_C_labaratory.dir
+/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,23 @@
+# ninja log v6
+1	40	1756733114084914024	CMakeFiles/Final_project_C_labaratory.dir/Data_memory.c.o	4bf1c77dfd87392a
+4	49	1756738660155794204	CMakeFiles/Final_project_C_labaratory.dir/Encoder.c.o	f2a9622010c61619
+3	49	1756738660154823425	CMakeFiles/Final_project_C_labaratory.dir/Instruction_memory.c.o	488fd80717f9bb3b
+0	36	1756146485930353173	CMakeFiles/Final_project_C_labaratory.dir/Instruction_image.c.o	5201167d90f36b84
+78	106	1756738660229717719	Final_project_C_labaratory	e2960d0e60e71342
+48	75	1756738660199357356	CMakeFiles/Final_project_C_labaratory.dir/externals.c.o	966ea20d0a6a946f
+1	30	1756260088761814275	CMakeFiles/Final_project_C_labaratory.dir/Labels_handler.c.o	fb5434da7c011f71
+6	49	1756738660157692346	CMakeFiles/Final_project_C_labaratory.dir/second_pass.c.o	edbbcbb0ae21c441
+5	47	1756738660156368988	CMakeFiles/Final_project_C_labaratory.dir/assembler.c.o	3a5704994b573840
+3	52	1756738660155013756	CMakeFiles/Final_project_C_labaratory.dir/Directive_handler.c.o	44485eca1a371045
+2	50	1756738660154085726	CMakeFiles/Final_project_C_labaratory.dir/Pre_processor.c.o	80f1ba16f584a9a3
+48	75	1756738660200119388	CMakeFiles/Final_project_C_labaratory.dir/lines_map.c.o	b4c1503f26c2c00e
+3	57	1756738660154358972	CMakeFiles/Final_project_C_labaratory.dir/Util.c.o	ace633b5d6b89bdc
+4	48	1756738660155677039	CMakeFiles/Final_project_C_labaratory.dir/memory_relocation.c.o	c71a6b71ef3b51fd
+3	49	1756738660155383334	CMakeFiles/Final_project_C_labaratory.dir/labels.c.o	b817634926d218f0
+5	50	1756738660156757942	CMakeFiles/Final_project_C_labaratory.dir/files.c.o	449bb459ea2b581f
+5	49	1756738660157273435	CMakeFiles/Final_project_C_labaratory.dir/first_pass.c.o	6937794965d049c7
+3	55	1756738660154612052	CMakeFiles/Final_project_C_labaratory.dir/Instructions_handler.c.o	652f97e14061ca9c
+1	37	1756146485930766254	CMakeFiles/Final_project_C_labaratory.dir/Relocation_table.c.o	1bebf05aa2067486
+0	38	1757105732087201467	build.ninja	d2924110b32b2592
+0	36	1756146485930453214	CMakeFiles/Final_project_C_labaratory.dir/Data_image.c.o	d68d9bf2013a2135
+49	77	1756738660200401426	CMakeFiles/Final_project_C_labaratory.dir/errors.c.o	600a1952e44cc5a4
