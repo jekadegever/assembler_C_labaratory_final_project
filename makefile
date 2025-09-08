@@ -1,66 +1,69 @@
 CC = gcc
-CFLAGS = -g -Wall -ansi -pedantic
+CFLAGS = -g -Wall -ansi -pedantic -IHeader_Files
 
 TARGET = assembler
 
-CLEAN_OBJ = assembler.o pre_processor.o util.o externals.o instructions.o instruction_memory.o data_memory.o directives.o labels.o memory_relocation.o encoder.o files.o first_pass.o second_pass.o
+CLEAN_OBJ = assembler.o pre_processor.o util.o externals.o instructions.o instruction_memory.o data_memory.o directives.o labels.o addresses.o encoder.o files.o first_pass.o second_pass.o errors.o lines_map.o tables.o sys_memory.o
 
 
-$(TARGET): assembler.o pre_processor.o util.o externals.o instructions.o instruction_memory.o data_memory.o directives.o labels.o memory_relocation.o encoder.o files.o first_pass.o second_pass.o errors.o lines_map.o tables.o
-	$(CC) $(CFLAGS) assembler.o pre_processor.o util.o externals.o instructions.o instruction_memory.o data_memory.o directives.o labels.o memory_relocation.o encoder.o files.o first_pass.o second_pass.o errors.o lines_map.o tables.o -o $(TARGET)
+$(TARGET): assembler.o pre_processor.o util.o externals.o instructions.o instruction_memory.o data_memory.o directives.o labels.o addresses.o encoder.o files.o first_pass.o second_pass.o errors.o lines_map.o tables.o sys_memory.o
+	$(CC) $(CFLAGS) assembler.o pre_processor.o util.o externals.o instructions.o instruction_memory.o data_memory.o directives.o labels.o addresses.o encoder.o files.o first_pass.o second_pass.o errors.o lines_map.o tables.o sys_memory.o -o $(TARGET)
 	rm -f *.o
-assembler.o: assembler.c assembler.h data_memory.h errors.h first_pass.h externals.h files.h pre_processor.h second_pass.h tables.h
-	$(CC) $(CFLAGS) -c assembler.c -o assembler.o
 
-pre_processor.o: pre_processor.c pre_processor.h config.h files.h boolean.h lines_map.h typedef.h context.h errors.h
-	$(CC) $(CFLAGS) -c pre_processor.c -o pre_processor.o
+assembler.o: Source_Files/assembler.c Header_Files/assembler.h Header_Files/data_memory.h Header_Files/errors.h Header_Files/first_pass.h Header_Files/externals.h Header_Files/files.h Header_Files/pre_processor.h Header_Files/second_pass.h Header_Files/tables.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/assembler.c -o assembler.o
 
-util.o: util.c util.h boolean.h externals.h  context.h lines_map.h config.h data_memory.h directives.h errors.h instructions.h instruction_memory.h labels.h memory_relocation.h pre_processor.h
-	$(CC) $(CFLAGS) -c util.c -o util.o
+pre_processor.o: Source_Files/pre_processor.c Header_Files/pre_processor.h Header_Files/config.h Header_Files/files.h Header_Files/boolean.h Header_Files/lines_map.h Header_Files/typedef.h Header_Files/context.h Header_Files/errors.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/pre_processor.c -o pre_processor.o
 
+util.o: Source_Files/util.c Header_Files/util.h Header_Files/boolean.h Header_Files/context.h Header_Files/lines_map.h Header_Files/config.h Header_Files/data_memory.h Header_Files/directives.h Header_Files/errors.h Header_Files/instructions.h Header_Files/instruction_memory.h Header_Files/labels.h Header_files/addresses.h Header_Files/pre_processor.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/util.c -o util.o
 
-instructions.o: instructions.c instructions.h config.h boolean.h errors.h  context.h encoder.h instruction_memory.h util.h data_memory.h
-	$(CC) $(CFLAGS) -c instructions.c -o instructions.o
+instructions.o: Source_Files/instructions.c Header_Files/instructions.h Header_Files/config.h Header_Files/boolean.h Header_Files/errors.h Header_Files/context.h Header_Files/encoder.h Header_Files/instruction_memory.h Header_Files/util.h Header_Files/data_memory.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/instructions.c -o instructions.o
 
-instruction_memory.o: instruction_memory.c instruction_memory.h config.h boolean.h typedef.h util.h errors.h
-	$(CC) $(CFLAGS) -c instruction_memory.c -o instruction_memory.o
+instruction_memory.o: Source_Files/instruction_memory.c Header_Files/instruction_memory.h Header_Files/config.h Header_Files/boolean.h Header_Files/typedef.h Header_Files/util.h Header_Files/errors.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/instruction_memory.c -o instruction_memory.o
 
-data_memory.o: data_memory.c data_memory.h config.h boolean.h typedef.h errors.h util.h
-	$(CC) $(CFLAGS) -c data_memory.c -o data_memory.o
+data_memory.o: Source_Files/data_memory.c Header_Files/data_memory.h Header_Files/config.h Header_Files/boolean.h Header_Files/typedef.h Header_Files/errors.h Header_Files/util.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/data_memory.c -o data_memory.o
 
-directives.o: directives.c directives.h config.h boolean.h typedef.h context.h data_memory.h util.h errors.h
-	$(CC) $(CFLAGS) -c directives.c -o directives.o
+directives.o: Source_Files/directives.c Header_Files/directives.h Header_Files/config.h Header_Files/boolean.h Header_Files/typedef.h Header_Files/context.h Header_Files/data_memory.h Header_Files/util.h Header_Files/errors.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/directives.c -o directives.o
 
-labels.o: labels.c labels.h boolean.h typedef.h context.h errors.h util.h
-	$(CC) $(CFLAGS) -c labels.c -o labels.o
+labels.o: Source_Files/labels.c Header_Files/labels.h Header_Files/boolean.h Header_Files/typedef.h Header_Files/context.h Header_Files/errors.h Header_Files/util.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/labels.c -o labels.o
 
-memory_relocation.o: memory_relocation.c memory_relocation.h  errors.h context.h instructions.h data_memory.h encoder.h instruction_memory.h labels.h util.h externals.h
-	$(CC) $(CFLAGS) -c memory_relocation.c -o memory_relocation.o
+addresses.o: source_files/addresses.c Header_files/addresses.h Header_Files/errors.h Header_Files/context.h Header_Files/instructions.h Header_Files/data_memory.h Header_Files/encoder.h Header_Files/instruction_memory.h Header_Files/labels.h Header_Files/util.h Header_Files/externals.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/addresses.c -o addresses.o
 
-encoder.o: encoder.c encoder.h config.h instructions.h memory_relocation.h util.h typedef.h context.h errors.h
-	$(CC) $(CFLAGS) -c encoder.c -o encoder.o
+encoder.o: Source_Files/encoder.c Header_Files/encoder.h Header_Files/config.h Header_Files/instructions.h Header_files/addresses.h Header_Files/util.h Header_Files/typedef.h Header_Files/context.h Header_Files/errors.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/encoder.c -o encoder.o
 
-files.o: files.c files.h config.h boolean.h externals.h data_memory.h instruction_memory.h labels.h util.h errors.h
-	$(CC) $(CFLAGS) -c files.c -o files.o
+files.o: Source_Files/files.c Header_Files/files.h Header_Files/config.h Header_Files/boolean.h Header_Files/externals.h Header_Files/data_memory.h Header_Files/instruction_memory.h Header_Files/labels.h Header_Files/util.h Header_Files/errors.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/files.c -o files.o
 
-second_pass.o: second_pass.c second_pass.h boolean.h files.h memory_relocation.h context.h util.h labels.h files.h errors.h directives.h
-	$(CC) $(CFLAGS) -c second_pass.c -o second_pass.o
+second_pass.o: Source_Files/second_pass.c Header_Files/second_pass.h Header_Files/boolean.h Header_Files/files.h Header_files/addresses.h Header_Files/context.h Header_Files/util.h Header_Files/labels.h Header_Files/errors.h Header_Files/directives.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/second_pass.c -o second_pass.o
 
-first_pass.o: first_pass.c first_pass.h data_memory.h directives.h files.h instructions.h instruction_memory.h labels.h util.h typedef.h context.h boolean.h errors.h
-	$(CC) $(CFLAGS) -c first_pass.c -o first_pass.o
+first_pass.o: Source_Files/first_pass.c Header_Files/first_pass.h Header_Files/data_memory.h Header_Files/directives.h Header_Files/files.h Header_Files/instructions.h Header_Files/instruction_memory.h Header_Files/labels.h Header_Files/util.h Header_Files/typedef.h Header_Files/context.h Header_Files/boolean.h Header_Files/errors.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/first_pass.c -o first_pass.o
 
-externals.o: externals.c externals.h util.h typedef.h errors.h labels.h
-	$(CC) $(CFLAGS) -c externals.c -o externals.o
+externals.o: Source_Files/externals.c Header_Files/externals.h Header_Files/util.h Header_Files/typedef.h Header_Files/errors.h Header_Files/labels.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/externals.c -o externals.o
 
-errors.o: errors.c errors.h  context.h config.h lines_map.h
-	$(CC) $(CFLAGS) -c errors.c -o errors.o
+errors.o: Source_Files/errors.c Header_Files/errors.h Header_Files/context.h Header_Files/config.h Header_Files/lines_map.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/errors.c -o errors.o
 
-lines_map.o: lines_map.c lines_map.h util.h typedef.h  errors.h
-	$(CC) $(CFLAGS) -c lines_map.c -o lines_map.o
+lines_map.o: Source_Files/lines_map.c Header_Files/lines_map.h Header_Files/util.h Header_Files/typedef.h Header_Files/errors.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/lines_map.c -o lines_map.o
 
-tables.o: tables.c tables.h instructions.h
-	$(CC) $(CFLAGS) -c tables.c -o tables.o
+tables.o: Source_Files/tables.c Header_Files/tables.h Header_Files/instructions.h Header_files/sys_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/tables.c -o tables.o
 
+sys_memory.o:  Source_Files/sys_memory.c Header_files/sys_memory.h Header_files/addresses.h Header_files/data_memory.h Header_files/labels.h Header_files/pre_processor.h Header_files/errors.h Header_files/externals.h Header_files/lines_map.h Header_files/instruction_memory.h
+	$(CC) $(CFLAGS) -c Source_Files/sys_memory.c -o sys_memory.o
 clean:
-	rm -f $(CLEAN_OBJ)  *.o
+	rm -f $(CLEAN_OBJ) *.o
+
 

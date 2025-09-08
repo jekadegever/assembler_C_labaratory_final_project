@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Final_project_C_labaratory
+# Project: assembler_project
 # Configurations: Debug
 # =============================================================================
 
@@ -41,131 +41,162 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target Final_project_C_labaratory
+# Object build statements for EXECUTABLE target assembler
 
 
 #############################################
-# Order-only phony target for Final_project_C_labaratory
+# Order-only phony target for assembler
 
-build cmake_object_order_depends_target_Final_project_C_labaratory: phony || .
+build cmake_object_order_depends_target_assembler: phony || .
 
-build CMakeFiles/Final_project_C_labaratory.dir/Pre_processor.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Pre_processor.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/Pre_processor.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/addresses.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/addresses.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/addresses.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/Util.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Util.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/Util.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/assembler.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/assembler.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/assembler.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/instructions.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/instructions.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/instructions.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/data_memory.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/data_memory.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/data_memory.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/Instruction_memory.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Instruction_memory.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/Instruction_memory.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/directives.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/directives.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/directives.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/Data_memory.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Data_memory.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/Data_memory.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/encoder.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/encoder.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/encoder.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/directives.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/directives.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/directives.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/errors.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/errors.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/errors.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/labels.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/labels.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/labels.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/externals.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/externals.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/externals.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/memory_relocation.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/memory_relocation.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/memory_relocation.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/files.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/files.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/files.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/Encoder.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Encoder.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/Encoder.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/first_pass.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/first_pass.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/first_pass.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/assembler.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/assembler.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/assembler.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/instruction_memory.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/instruction_memory.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/instruction_memory.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/files.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/files.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/files.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/instructions.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/instructions.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/instructions.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/first_pass.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/first_pass.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/first_pass.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/labels.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/labels.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/labels.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/second_pass.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/second_pass.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/second_pass.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/lines_map.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/lines_map.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/lines_map.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/externals.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/externals.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/externals.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/pre_processor.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/pre_processor.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/pre_processor.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/lines_map.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/lines_map.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/lines_map.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/second_pass.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/second_pass.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/second_pass.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/errors.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/errors.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/errors.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/sys_memory.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/sys_memory.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/sys_memory.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/Final_project_C_labaratory.dir/tables.c.o: C_COMPILER__Final_project_C_labaratory_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/tables.c || cmake_object_order_depends_target_Final_project_C_labaratory
-  DEP_FILE = CMakeFiles/Final_project_C_labaratory.dir/tables.c.o.d
-  FLAGS = -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
-  OBJECT_FILE_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build CMakeFiles/assembler.dir/Source_Files/tables.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/tables.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/tables.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
+
+build CMakeFiles/assembler.dir/Source_Files/util.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Source_Files/util.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/Source_Files/util.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
+
+build CMakeFiles/assembler.dir/source_files/sys_memory.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/source_files/sys_memory.c || cmake_object_order_depends_target_assembler
+  DEP_FILE = CMakeFiles/assembler.dir/source_files/sys_memory.c.o.d
+  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
+  OBJECT_DIR = CMakeFiles/assembler.dir
+  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/source_files
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Final_project_C_labaratory
+# Link build statements for EXECUTABLE target assembler
 
 
 #############################################
-# Link the executable Final_project_C_labaratory
+# Link the executable assembler
 
-build Final_project_C_labaratory: C_EXECUTABLE_LINKER__Final_project_C_labaratory_Debug CMakeFiles/Final_project_C_labaratory.dir/Pre_processor.c.o CMakeFiles/Final_project_C_labaratory.dir/Util.c.o CMakeFiles/Final_project_C_labaratory.dir/instructions.c.o CMakeFiles/Final_project_C_labaratory.dir/Instruction_memory.c.o CMakeFiles/Final_project_C_labaratory.dir/Data_memory.c.o CMakeFiles/Final_project_C_labaratory.dir/directives.c.o CMakeFiles/Final_project_C_labaratory.dir/labels.c.o CMakeFiles/Final_project_C_labaratory.dir/memory_relocation.c.o CMakeFiles/Final_project_C_labaratory.dir/Encoder.c.o CMakeFiles/Final_project_C_labaratory.dir/assembler.c.o CMakeFiles/Final_project_C_labaratory.dir/files.c.o CMakeFiles/Final_project_C_labaratory.dir/first_pass.c.o CMakeFiles/Final_project_C_labaratory.dir/second_pass.c.o CMakeFiles/Final_project_C_labaratory.dir/externals.c.o CMakeFiles/Final_project_C_labaratory.dir/lines_map.c.o CMakeFiles/Final_project_C_labaratory.dir/errors.c.o CMakeFiles/Final_project_C_labaratory.dir/tables.c.o
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
-  OBJECT_DIR = CMakeFiles/Final_project_C_labaratory.dir
+build assembler: C_EXECUTABLE_LINKER__assembler_Debug CMakeFiles/assembler.dir/Source_Files/addresses.c.o CMakeFiles/assembler.dir/Source_Files/assembler.c.o CMakeFiles/assembler.dir/Source_Files/data_memory.c.o CMakeFiles/assembler.dir/Source_Files/directives.c.o CMakeFiles/assembler.dir/Source_Files/encoder.c.o CMakeFiles/assembler.dir/Source_Files/errors.c.o CMakeFiles/assembler.dir/Source_Files/externals.c.o CMakeFiles/assembler.dir/Source_Files/files.c.o CMakeFiles/assembler.dir/Source_Files/first_pass.c.o CMakeFiles/assembler.dir/Source_Files/instruction_memory.c.o CMakeFiles/assembler.dir/Source_Files/instructions.c.o CMakeFiles/assembler.dir/Source_Files/labels.c.o CMakeFiles/assembler.dir/Source_Files/lines_map.c.o CMakeFiles/assembler.dir/Source_Files/pre_processor.c.o CMakeFiles/assembler.dir/Source_Files/second_pass.c.o CMakeFiles/assembler.dir/Source_Files/sys_memory.c.o CMakeFiles/assembler.dir/Source_Files/tables.c.o CMakeFiles/assembler.dir/Source_Files/util.c.o CMakeFiles/assembler.dir/source_files/sys_memory.c.o
+  FLAGS = -Wall -ansi -pedantic -g -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
+  OBJECT_DIR = CMakeFiles/assembler.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = Final_project_C_labaratory
-  TARGET_PDB = Final_project_C_labaratory.dbg
+  TARGET_FILE = assembler
+  TARGET_PDB = assembler.dbg
 
 
 #############################################
@@ -201,7 +232,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/cmake-build-debug
 
-build all: phony Final_project_C_labaratory
+build all: phony assembler
 
 # =============================================================================
 # Built-in targets

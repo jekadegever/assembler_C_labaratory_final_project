@@ -128,7 +128,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Final_project_C_labaratory
+CMAKE_PROJECT_NAME:STATIC=assembler_project
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -203,6 +203,15 @@ Final_project_C_labaratory_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Final_project_C_labaratory_SOURCE_DIR:STATIC=/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory
+
+//Value Computed by CMake
+assembler_project_BINARY_DIR:STATIC=/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/cmake-build-debug
+
+//Value Computed by CMake
+assembler_project_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+assembler_project_SOURCE_DIR:STATIC=/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory
 
 
 ########################

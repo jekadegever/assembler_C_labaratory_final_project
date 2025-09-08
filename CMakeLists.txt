@@ -1,43 +1,21 @@
-cmake_minimum_required(VERSION 3.30)
-project(Final_project_C_labaratory C)
+cmake_minimum_required(VERSION 3.16)
+project(assembler_project C)
 
 set(CMAKE_C_STANDARD 90)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -ansi -pedantic -g")
+#source and head files
+set(SRC_DIR "${CMAKE_SOURCE_DIR}/Source_Files")
+set(HEADER_DIR "${CMAKE_SOURCE_DIR}/Header_Files")
 
-add_executable(Final_project_C_labaratory
-        Pre_processor.c
-        Pre_processor.h
-        Config.h
-        Util.c
-        Util.h
-        Instructions_handler.c
-        Instructions_handler.h
-        Instruction_memory.c
-        Instruction_memory.h
-        Data_memory.c
-        Data_memory.h
-        Directive_handler.c
-        Directive_handler.h
-        labels.c
-        labels.h
-        memory_relocation.c
-        memory_relocation.h
-        Encoder.c
-        assembler.c
-        assembler.h
-        Encoder.h
-        files.c
-        files.h
-        first_pass.c
-        first_pass.h
-        boolean.h
-        second_pass.c
-        second_pass.h
-        externals.c
-        externals.h
-        lines_map.c
-        lines_map.h
-        errors.c
-        errors.h
-        typedef.h
-        context.h
-)
+#all c source files
+file(GLOB SRC_FILES "${SRC_DIR}/*.c")
+
+#add include directories search
+include_directories(${HEADER_DIR})
+
+#add the final executable
+add_executable(assembler ${SRC_FILES}
+        Header_files/instruction_memory.h
+        Header_files/util.h
+        source_files/sys_memory.c
+        source_files/sys_memory.h)
