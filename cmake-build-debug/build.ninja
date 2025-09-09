@@ -175,13 +175,6 @@ build CMakeFiles/assembler.dir/Source_Files/util.c.o: C_COMPILER__assembler_unsc
   OBJECT_DIR = CMakeFiles/assembler.dir
   OBJECT_FILE_DIR = CMakeFiles/assembler.dir/Source_Files
 
-build CMakeFiles/assembler.dir/source_files/sys_memory.c.o: C_COMPILER__assembler_unscanned_Debug /Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/source_files/sys_memory.c || cmake_object_order_depends_target_assembler
-  DEP_FILE = CMakeFiles/assembler.dir/source_files/sys_memory.c.o.d
-  FLAGS = -Wall -ansi -pedantic -g -g -std=gnu90 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/jenyatokarzhevsky/CLionProjects/Final_project-C-labaratory/Header_Files
-  OBJECT_DIR = CMakeFiles/assembler.dir
-  OBJECT_FILE_DIR = CMakeFiles/assembler.dir/source_files
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target assembler
@@ -190,7 +183,7 @@ build CMakeFiles/assembler.dir/source_files/sys_memory.c.o: C_COMPILER__assemble
 #############################################
 # Link the executable assembler
 
-build assembler: C_EXECUTABLE_LINKER__assembler_Debug CMakeFiles/assembler.dir/Source_Files/addresses.c.o CMakeFiles/assembler.dir/Source_Files/assembler.c.o CMakeFiles/assembler.dir/Source_Files/data_memory.c.o CMakeFiles/assembler.dir/Source_Files/directives.c.o CMakeFiles/assembler.dir/Source_Files/encoder.c.o CMakeFiles/assembler.dir/Source_Files/errors.c.o CMakeFiles/assembler.dir/Source_Files/externals.c.o CMakeFiles/assembler.dir/Source_Files/files.c.o CMakeFiles/assembler.dir/Source_Files/first_pass.c.o CMakeFiles/assembler.dir/Source_Files/instruction_memory.c.o CMakeFiles/assembler.dir/Source_Files/instructions.c.o CMakeFiles/assembler.dir/Source_Files/labels.c.o CMakeFiles/assembler.dir/Source_Files/lines_map.c.o CMakeFiles/assembler.dir/Source_Files/pre_processor.c.o CMakeFiles/assembler.dir/Source_Files/second_pass.c.o CMakeFiles/assembler.dir/Source_Files/sys_memory.c.o CMakeFiles/assembler.dir/Source_Files/tables.c.o CMakeFiles/assembler.dir/Source_Files/util.c.o CMakeFiles/assembler.dir/source_files/sys_memory.c.o
+build assembler: C_EXECUTABLE_LINKER__assembler_Debug CMakeFiles/assembler.dir/Source_Files/addresses.c.o CMakeFiles/assembler.dir/Source_Files/assembler.c.o CMakeFiles/assembler.dir/Source_Files/data_memory.c.o CMakeFiles/assembler.dir/Source_Files/directives.c.o CMakeFiles/assembler.dir/Source_Files/encoder.c.o CMakeFiles/assembler.dir/Source_Files/errors.c.o CMakeFiles/assembler.dir/Source_Files/externals.c.o CMakeFiles/assembler.dir/Source_Files/files.c.o CMakeFiles/assembler.dir/Source_Files/first_pass.c.o CMakeFiles/assembler.dir/Source_Files/instruction_memory.c.o CMakeFiles/assembler.dir/Source_Files/instructions.c.o CMakeFiles/assembler.dir/Source_Files/labels.c.o CMakeFiles/assembler.dir/Source_Files/lines_map.c.o CMakeFiles/assembler.dir/Source_Files/pre_processor.c.o CMakeFiles/assembler.dir/Source_Files/second_pass.c.o CMakeFiles/assembler.dir/Source_Files/sys_memory.c.o CMakeFiles/assembler.dir/Source_Files/tables.c.o CMakeFiles/assembler.dir/Source_Files/util.c.o
   FLAGS = -Wall -ansi -pedantic -g -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
   OBJECT_DIR = CMakeFiles/assembler.dir
   POST_BUILD = :
