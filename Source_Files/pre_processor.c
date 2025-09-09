@@ -82,13 +82,11 @@ boolean execute_preprocessor(assembler_context* asmContext) {
             /*check if macro_already_exist*/
             if (!is_name_valid(macro_name)) {
                 print_external_error(ERROR_CODE_148);
-                //goto cleanUp;
             }
 
             /*verify that the macro name not used */
             if (!can_add_name(macro_name,asmContext)) {
                 print_external_error(ERROR_CODE_147);
-                //goto cleanUp;
             }
 
             /*macro  exists get the macro content*/
