@@ -1,0 +1,33 @@
+    ; - - - -file invalid5.as - - - -
+
+; - - - - - - - - - SECOND PASS ERRORS - - - - - - - - -
+
+MAIN:   mov r1,r2
+        inc r3
+        jmp r4
+        dec r3
+
+LOOP: inc r1
+      bne r2
+
+
+
+;label name not defined
+       jmp LOOP2
+
+
+
+;no label declaration for entry label
+       .entry LOOP5
+
+
+;entry label defined as external
+        .extern MAIN3
+        .entry MAIN3
+
+;no label after entry/extern directive
+        .entry
+
+;extra tokens after .entry directive
+        .entry loop r1
+

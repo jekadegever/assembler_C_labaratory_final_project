@@ -55,7 +55,7 @@ boolean add_external_usage(const char* label_name, unsigned int mem_addr, extern
 
     /*insert value into the new allocated node*/
     extern_name = copy_string(label_name);
-    if (extern_name == NULL) {return false;}
+
 
     new_extern_node->label_name = extern_name;
     new_extern_node->mem_address = mem_addr;

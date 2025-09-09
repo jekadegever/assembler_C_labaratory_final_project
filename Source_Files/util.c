@@ -43,9 +43,9 @@ char* copy_string(const char *string) {
     /*allocate memory for new string with the size of original string*/
     copied_string = (char*)handle_malloc(sizeof(char) * (strlen(string) + 1));
 
-
     /*copy the original string into the allocated memory*/
     strcpy(copied_string, string);
+
 
     /*return the string copy*/
     return copied_string;
@@ -234,6 +234,7 @@ void print_binary(unsigned int num, int bits) {
  * 2 - data directive
  * 3 - entry directive
  * 4- extern directive
+ * 5 - empty
  */
 line_type get_line_type(const char *line, assembler_context *asmContext) {
 
@@ -244,13 +245,23 @@ line_type get_line_type(const char *line, assembler_context *asmContext) {
     /*verify that all input pointers exist*/
     if (!line || !asmContext)  {
         print_internal_error(ERROR_CODE_25, "get_line_type");
-        return UNKNOWN_LINE;
     }
+
+
+
+ /* Verify that the line is not empty.
+ *
+ * This check is relevant only in the special case where an empty line
+ * appears immediately after a label declaration.
+ *
+ * For a regular empty line, the assembler should never enter this function;
+ * instead, it should detect the line as empty earlier and simply skip it.*/
+    if (is_comment_or_empty_line(line)){return EMPTY_LINE;}
+
+
     /*get a line copy*/
     copy_line = copy_string(line);
-    if (copy_line == NULL) {
-        return type;
-    }
+
 
     /*get the first token*/
     token = strtok(copy_line, " ");

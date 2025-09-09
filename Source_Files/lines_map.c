@@ -122,3 +122,4 @@ void remove_last_line(lines_map_ptr *lines_map) {
     }
     safe_free((void**)&temp);
 }
+

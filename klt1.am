@@ -1,24 +1,4 @@
-mov r1,r2
-HELLO: .data 1
-.entry HELLO
 
-.extern A
-jmp A
-rts
-rts
-.extern HEL
-jmp HEL
-bne r2
-jmp r4
-movr r1, HEL
-jmp r4
-stop
-jmpb
-stop
-bne r5
-bne r2
-jmp r4
-movr r1, HEL
-stop
-jmpb
-stop
+HELLO: .data 1,2
+ASL!: stop
+        cmp r1,

@@ -45,6 +45,7 @@ boolean execute_preprocessor(assembler_context* asmContext) {
     int macro_line;/*macro content line, used to build line LUT*/
 
 
+
     /*verify assembler Context pointer exist*/
     if ( !asmContext) {
         print_internal_error(ERROR_CODE_25,"execute_preprocessor");
@@ -81,16 +82,16 @@ boolean execute_preprocessor(assembler_context* asmContext) {
             /*check if macro_already_exist*/
             if (!is_name_valid(macro_name)) {
                 print_external_error(ERROR_CODE_148);
-                goto cleanUp;
+                //goto cleanUp;
             }
 
             /*verify that the macro name not used */
             if (!can_add_name(macro_name,asmContext)) {
                 print_external_error(ERROR_CODE_147);
-                goto cleanUp;
+                //goto cleanUp;
             }
 
-            /*macro  exists, name received , get the macro content*/
+            /*macro  exists get the macro content*/
             if (!read_macro_content(as_file, &macro_content, &macro_lines_count, asmContext)) {
                 goto cleanUp;
             }
@@ -268,9 +269,7 @@ char *is_start_of_macro(char *line, assembler_context *asmContext) {
 
     /*copy the line to not change the original one*/
     temp_line = copy_string(line);
-    if (temp_line == NULL) {
-        return NULL;
-    }
+
 
     /*get the first token and check if the token is maco definition command (mcro)*/
     token = strtok(temp_line, " \t\n");
@@ -304,12 +303,9 @@ char *is_start_of_macro(char *line, assembler_context *asmContext) {
 
    /*copy the found macro name */
     macro_name = copy_string(token);
-    if (macro_name == NULL) {
-        safe_free((void**)&temp_line);
-        return NULL;
-    }
 
-    /*return macro name if found, NULL otherwise*/
+
+    /*return macro name if found*/
     safe_free((void**)&temp_line);
     return macro_name;
 }

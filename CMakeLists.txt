@@ -15,7 +15,7 @@ include_directories(${HEADER_DIR})
 
 #add the final executable
 add_executable(assembler ${SRC_FILES}
-        Header_files/instruction_memory.h
-        Header_files/util.h
-        source_files/sys_memory.c
-        source_files/sys_memory.h)
+        Header_Files/instruction_memory.h
+        Header_Files/util.h
+        Source_Files/sys_memory.c
+        Header_Files/sys_memory.h)

@@ -45,8 +45,6 @@ char *find_label_definition(char *line, assembler_context *asmContext) {
 
     /*get a copy of the provided assembly line*/
     temp_line = copy_string(line);
-    if (temp_line == NULL) { return NULL;}
-
 
     /*get the first line token*/
     token = strtok(temp_line, "\t\n ");
@@ -55,20 +53,23 @@ char *find_label_definition(char *line, assembler_context *asmContext) {
         return NULL;
     }
 
-
     /*get the len of word*/
     token_len = strlen(token);
 
-    /*verify that the last char is ':' sign*/
+    /*if the last char is ':', the token is a label*/
     if (token[strlen(token)-1] != ':') {
         safe_free((void**)&temp_line);
         return NULL;
     }
+
+
+
     /*remove the ':' from the label definition by '\0' insertion*/
     token[token_len-1] = '\0';
     token_len--;/*increase labels length*/
 
 
+    /*verify that the label name is allowed*/
     if (is_name_valid(token)) {
         /*verify that the label name  not used yet*/
         if (!can_add_name(token, asmContext)) {
@@ -84,21 +85,23 @@ char *find_label_definition(char *line, assembler_context *asmContext) {
     /*allocate memory for label name (even if the label name is invalid
      * if the name invalid, error will appear and program will execute the second pass */
     name = handle_malloc(sizeof(char)*token_len+1);
-
         strcpy(name, token);
 
+    /*jump over the label name ,+ 2(because the end of the string is \0\0)*/
+    token+= token_len+1;
 
-        /*jump over the label name ,+ 2(because the end of the string is \0\0)*/
-        token+= token_len+1;
+    /*verify that the pointer will not jump over the end of the line*/
+    if (line_len > token_len+1) {token++;}
 
-        /*verify that the pointer will not jump over the end of the line*/
-        if (line_len > token_len+1) {token++;}
-        /*change the original line by removing the label definition from the line*/
-        memmove(line,token,strlen(token)+1);
+    /*change the original line by removing the label definition from the line*/
+    memmove(line,token,strlen(token)+1);
 
-        safe_free((void**)&temp_line);
-        return name;/*the caller should free the allocated memory*/
+
+    safe_free((void**)&temp_line);
+    return name;/*the caller should free the allocated memory for name*/
 }
+
+
 
 
 void remove_label_from_line(char *line) {
@@ -112,7 +115,6 @@ void remove_label_from_line(char *line) {
 
     /*get a copy of the line*/
     temp_line = copy_string(line);
-    if (temp_line == NULL) {return;}
 
     /* - - - - - - search for label definition - - - - - - - -*/
 

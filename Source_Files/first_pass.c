@@ -47,7 +47,7 @@ boolean execute_first_pass(assembler_context *asmContext) {
     boolean directive_processed = false;
     boolean instruction_processed = false;
     line_type type;
-    char* am_file_name = NULL;
+
 
 
 
@@ -119,7 +119,7 @@ boolean execute_first_pass(assembler_context *asmContext) {
                         asmContext->first_pass_error = true;
                     }
                 }
-                safe_free((void**)&label);
+
                 break;
             }
 
@@ -136,7 +136,7 @@ boolean execute_first_pass(assembler_context *asmContext) {
                         asmContext->first_pass_error = true;
                     }
                 }
-                safe_free((void**)&label);
+
                 break;
             }
 
@@ -152,15 +152,33 @@ boolean execute_first_pass(assembler_context *asmContext) {
 
                     }
                 }
-                safe_free((void**)&label);
+
                 break;
             }
-            /*skip entry directive line (handled in second pass)*/
+
+
             case ENTRY_DIRECTIVE_LINE:{
-                safe_free((void**)&label);
-                continue;
+                /*skip entry directive line (handled in second pass)*/
+                break;
 
             }
+
+            case EMPTY_LINE: {
+                 /*skip this line after error printed*/
+
+                /* This case is relevant only in the special case where an empty line
+                 * appears immediately after a label declaration.
+                 *
+                 * For a regular empty line, the assembler should never
+                 * enter this case instead, ite should detect the line
+                 * as empty earlier and continue to the next line.*/
+                    print_external_error(ERROR_CODE_180);
+                    asmContext->first_pass_error = true;
+
+                break;
+            }
+
+
             default: {
                 /*Unknown line type found*/
                 if (*line == '.') {
@@ -171,7 +189,7 @@ boolean execute_first_pass(assembler_context *asmContext) {
                     print_external_error(ERROR_CODE_166);
                 }
                 asmContext->first_pass_error = true;
-                safe_free((void**)&label);
+
 
                 break;
             }
@@ -179,7 +197,7 @@ boolean execute_first_pass(assembler_context *asmContext) {
         }
 
 
-
+        safe_free((void**)&label);
 
     }
     /*clean-up allocated memory and close the used file*/

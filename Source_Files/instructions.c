@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdio.h>
+
 #include "config.h"
 #include "data_memory.h"
 #include "util.h"
@@ -301,6 +303,7 @@ int extract_operands(char *line, char **src_out, char **dest_out, assembler_cont
     int operands_count = 0;
     int comma_count = 0;
     int i =0;
+    boolean comma_at_end = false;
 
 
     /*Init out pointers*/
@@ -328,11 +331,15 @@ int extract_operands(char *line, char **src_out, char **dest_out, assembler_cont
            comma_count++;
        }
    }
+    /*check if unnecessary comma in the end of line, before strtok(",") remove it*/
+    comma_at_end = (line[strlen(line)-1] == ','? true : false);
 
 
     /*In case of matrix operand , whitespace characters inside the [][] will be removed.
     this is important in order to recognize this operand as a continuous word rather than two or more words separated by spaces*/
     trim_bracket_edge_spaces(line);
+
+
 
 
 
@@ -380,10 +387,10 @@ int extract_operands(char *line, char **src_out, char **dest_out, assembler_cont
         if (*line == ',') {
             print_external_error(ERROR_CODE_168);
         }
-        if (line[strlen(line) - 1] == ',') {
+        if (comma_at_end) {
             print_external_error(ERROR_CODE_169);
         }
-        if (*line != ',' && line[strlen(line) - 1] != ',') {
+        if (*line != ',' && !comma_at_end) {
             print_external_error(ERROR_CODE_170);
         }
         return -1;
@@ -506,7 +513,7 @@ boolean try_parse_matrix_operand(const char *operand_str, operand *operand, asse
 
     /*copy the operand's string to not change the original one due the process*/
     p = copy_string(operand_str);
-    if (!p) {return false;}
+
 
     /*point to the start of the string, the first token
      *in the string should be a label name*/
@@ -637,6 +644,8 @@ boolean try_parse_matrix_operand(const char *operand_str, operand *operand, asse
     return false;
 
     matrix_format_error:
+    /*the operand is matrix but with format error*/
+    operand->type = MATRIX_ACCESS;
     safe_free((void**)&label_name);
     asmContext->first_pass_error = true;
     /* return true if the operand is identified as an matrix operand even if format error found,
@@ -760,6 +769,7 @@ boolean try_parse_immediate_operand(const char *operand_str, operand *operand, a
     return false;
 
     immediate_format_error:
+    operand->type = IMMEDIATE_ACCESS;
     asmContext->first_pass_error = true;
     safe_free((void**)&orig_address);
     /* return true if the operand is identified as an immediate (#), even if format error found.

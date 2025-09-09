@@ -111,7 +111,7 @@ static void allocation_track_add(void *ptr) {
 
     allocationNode *node;
 
-    if (!ptr) return;/*in not input ptr*/
+    if (!ptr) return;/*not input ptr*/
 
     node = (allocationNode*)malloc(sizeof(allocationNode));/*allocate memory for ptr*/
     if (!node) return; /*in the worst case, node wouldn't be tracked*/

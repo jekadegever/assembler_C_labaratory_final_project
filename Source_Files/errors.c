@@ -119,7 +119,11 @@ error external_errors[] = {
     { AS_FILE_LINE_AND_FILE_NAME,{ ERROR_CODE_176 }, "Macro declaration error: macro name not found." },
     { AS_FILE_LINE_AND_FILE_NAME,{ ERROR_CODE_177 }, "mcroend command found without valid macro declaration before." },
     { AM_FILE_LINE_AND_FILE_NAME,   { ERROR_CODE_178 }, "floating point are not allowed at immediate operand" },
-    { NO_FILE_NAME_NO_LINE,{ ERROR_CODE_179 }, "Input file is missing." }
+    { NO_FILE_NAME_NO_LINE,{ ERROR_CODE_179 }, "Input file is missing." },
+{ AM_FILE_LINE_AND_FILE_NAME,   { ERROR_CODE_180 }, "can't define label on empty line;" },
+{ AM_FILE_LINE_AND_FILE_NAME,   { ERROR_CODE_181 }, "Data declaration error: unnecessary comma sign ',' before numbers." },
+{ AM_FILE_LINE_AND_FILE_NAME,   { ERROR_CODE_182 }, "Data declaration error: number missing after comma sign ','." },
+
 };
 
 /* ---------------- Internal Error Codes Table ---------------- */

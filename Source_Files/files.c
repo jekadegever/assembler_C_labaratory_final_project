@@ -334,9 +334,7 @@ char* change_file_extension(file_type type, const char *as_file_name) {
 
     /*copy the file name into a new memory*/
     new_file_name = copy_string(as_file_name);
-    if (!new_file_name) {
-        return NULL;
-    }
+
 
     p = new_file_name;
 
@@ -537,10 +535,19 @@ boolean split_name_and_path(const char* full_file_path_in,char** name_out,char**
     *name_out = NULL;
     *path_out = NULL;
 
+
+
+    /*remove backslash in start of line (if exist)*/
+    if (*full_file_path_in == '\\' || *full_file_path_in == '/')
+        full_file_path_in++;
+
+
+
     /* the string is empty */
     if (*full_file_path_in == '\0') {
         return true;
     }
+
 
     /* Find last separator*/
     for (p = full_file_path_in; *p != '\0'; ++p) {
@@ -616,9 +623,3 @@ boolean split_name_and_path(const char* full_file_path_in,char** name_out,char**
     return true;
 }
 
-boolean add_file_extension(char* Name, char* file_name_out) {
-    char* ptr;
-    char* file_name;
-
-
-}

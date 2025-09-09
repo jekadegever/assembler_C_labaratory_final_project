@@ -131,7 +131,10 @@ typedef enum external_error_code {
     ERROR_CODE_177 = 77,
     ERROR_CODE_178 = 78,
     ERROR_CODE_179 = 79,
-    ERROR_CODE_180 = 80
+    ERROR_CODE_180 = 80,
+    ERROR_CODE_181 = 81,
+    ERROR_CODE_182 = 82,
+    ERROR_CODE_183 = 83
 } external_error_code;
 
 

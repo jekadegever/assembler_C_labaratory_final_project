@@ -386,6 +386,11 @@ boolean extract_directive_numbers(const char *line, unsigned int *out_count, int
         /*empty line -> no errors and no numbers*/
 
     }
+    if (*p == ',') {
+        print_external_error(ERROR_CODE_181);
+        *out_count = 0;
+        return false;
+    }
 
     /*start running till the end of the line*/
     while (*p != '\0') {
@@ -407,7 +412,18 @@ boolean extract_directive_numbers(const char *line, unsigned int *out_count, int
 
             /*if optional sign doesn't appear, the current char must be a digit*/
             if (!isdigit((unsigned char)*p)) {
-                print_external_error(ERROR_CODE_131);
+                if (*p == '.') {
+                    print_external_error(ERROR_CODE_173);
+                }
+                else if (isalpha((unsigned char)*p))
+                    print_external_error(ERROR_CODE_174);
+
+                else if (*p == ',')
+                    print_external_error(ERROR_CODE_182);
+
+                else
+                    print_external_error(ERROR_CODE_131);
+
                 *out_count = 0;
                 return false;
             }
@@ -528,8 +544,8 @@ char *extract_directive_string(char * line, assembler_context *asmContext) {
 
     /*run till the second quotes or till the end of the lineL*/
     while (*p != '"' && *p != '\0') {
-        /*the string between the quotes can be whitespace or alpha char */
-        if (isalnum((unsigned char)*p) || isspace((unsigned char)*p)) {
+        /*the string between the quotes must be printable char*/
+        if (isprint(*p)) {
             /*insert each found char into the buffer*/
             buff[buff_pointer++] = *p;
         }

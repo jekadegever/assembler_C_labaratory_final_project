@@ -9,27 +9,17 @@
 /**
  * @enum line_type
  * @brief Represents the classification of an assembly source line.
- *
- * Each parsed line is categorized into one of the following types:
- *
- * - UNKNOWN_LINE          → The line type could not be determined
- *                           (invalid or unrecognized syntax).
- * - INSTRUCTION_LINE      → A valid instruction line containing an opcode
- *                           and optional operands.
- * - DATA_DIRECTIVE_LINE   → A data directive line such as `.data`, `.string`, `.mat`.
- * - ENTRY_DIRECTIVE_LINE  → An `.entry` directive line, marking a label as entry.
- * - EXTERN_DIRECTIVE_LINE → An `.extern` directive line, declaring an external label.
- *
- * This enum is used by the assembler to decide how to handle each line
- * during the first and second passes.
  */
-typedef enum {
-    UNKNOWN_LINE,
-    INSTRUCTION_LINE,
-    DATA_DIRECTIVE_LINE,
-    ENTRY_DIRECTIVE_LINE,
-    EXTERN_DIRECTIVE_LINE
+typedef enum line_type {
+    UNKNOWN_LINE,        /**< UNKNOWN_LINE: The line type could not be determined (invalid or unrecognized syntax). */
+    INSTRUCTION_LINE,    /**< INSTRUCTION_LINE: A valid instruction line containing an opcode and optional operands. */
+    DATA_DIRECTIVE_LINE, /**< DATA_DIRECTIVE_LINE: A data directive line such as `.data`, `.string`, `.mat`. */
+    ENTRY_DIRECTIVE_LINE,/**< ENTRY_DIRECTIVE_LINE: An `.entry` directive line, marking a label as entry. */
+    EXTERN_DIRECTIVE_LINE,/**< EXTERN_DIRECTIVE_LINE: An `.extern` directive line, declaring an external label. */
+    EMPTY_LINE           /**< EMPTY_LINE: Line is empty after label declaration. */
 } line_type;
+
+
 
 
  /**
@@ -39,7 +29,7 @@ typedef enum {
   * If allocation fails, a system error is printed
   * and the program is terminated after all allocated
   * memory released  — ensuring that the caller does not
-  * need to manually check for allocation failures.
+  * need to manually check for failures.
   */
 char* copy_string(const char *string);
 
