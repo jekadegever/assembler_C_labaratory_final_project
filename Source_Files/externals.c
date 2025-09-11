@@ -87,7 +87,7 @@ void print_external_usages(external_ptr externals_list) {
     /*prints each node's values*/
     while (externals_list != NULL) {
         printf("extern label: %s -> used in address: ", externals_list->label_name);
-        print_binary(externals_list->mem_address,10);
+        print_binary(externals_list->mem_address,10, STDOUT, NULL);
         printf("\n");
         externals_list = externals_list->next;
     }

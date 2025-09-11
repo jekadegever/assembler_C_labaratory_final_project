@@ -27,6 +27,7 @@ typedef enum file_type {
     EXTERNAL_FILE,  /**< EXTERNAL_FILE: Externals file (.ext). */
     ENTRY_FILE,     /**< ENTRY_FILE: Entries file (.ent).*/
     AM_FILE,        /**< AM_FILE: Preprocessed file (.am).*/
+    BIN_FILE,       /**< BINARY_FILE: object file in binary (.bin).*/
     NO_EXTENSION    /**< NO_EXTENSION: No file extension.*/
 } file_type;
 
@@ -94,6 +95,19 @@ boolean create_ext_file(assembler_context *asmContext);
  * run_assembler fuc responsible to free it in the end.
  */
 boolean create_obj_file(assembler_context *asmContext);
+
+/**
+ * @brief Generate the .bin file (object image in biary) from instruction and data memories.
+ *
+ * Writes IC/DC header (in binary), then all instruction words followed by data words.
+ *
+ * @param asmContext Assembler context (IC, DC, memories, file names).
+ * @return true on success, false on allocation/open/write errors (error printed).
+ *
+ * @note on success, the new bin file name store in the global assembler context,
+ * run_assembler fuc responsible to free it in the end.
+ */
+boolean create_bin_file(assembler_context *asmContext);
 
 /**
  * @brief Build a new file name by replacing the extension.

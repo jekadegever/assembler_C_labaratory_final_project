@@ -100,7 +100,7 @@ void print_data_memory(data_ptr data_memory) {
     /*run over the list and print each cell values */
     while (data_memory != NULL) {
         printf("binary: ");
-        print_binary(data_memory->value, 10);
+        print_binary(data_memory->value, 10, STDOUT, NULL);
         printf("\tdecimal: %d",data_memory->value);
         printf("\tin address: %d\n", data_memory->address);
 

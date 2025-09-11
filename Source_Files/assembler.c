@@ -183,6 +183,12 @@ boolean run_assembler(int argc, char *argv[]) {
             goto cleanup;
         }
 
+        /*creat bin file*/
+        if (!create_bin_file(&assembler_context)) {
+            printf("Error while creating obj file\n\n");
+            goto cleanup;
+        }
+
 
         /*create ext file (if required)*/
         if (is_externals_usage_exist(assembler_context.external_labels)) {
@@ -210,6 +216,9 @@ boolean run_assembler(int argc, char *argv[]) {
         }
         if (assembler_context.ext_file_name) {
             printf(", %s", assembler_context.ext_file_name);
+        }
+        if (assembler_context.bin_file_name) {
+            printf(", %s", assembler_context.bin_file_name);
         }
         if (assembler_context.ent_file_name) {
             printf(", %s", assembler_context.ent_file_name);
@@ -308,6 +317,7 @@ int init_assembler(assembler_context* context) {
     context->attributes_directive_table = get_attributes_directives_table();
     context->registers = get_registers();
     context->macro_declaration_table = get_macro_declaration_table();
+    context->bin_file_name = NULL;
 
     set_error_context(context);
     return true;

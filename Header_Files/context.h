@@ -46,6 +46,7 @@ typedef struct assembler_context {
     char* ent_file_name;  /**< Entry symbols file (.ent). */
     char* ext_file_name;  /**< Externals usage file (.ext). */
     char* obj_file_name;  /**< Object file (.ob). */
+    char* bin_file_name;  /**< Object file in binary (.bin). */
 
     char* file_path; /**< file directory. */
 

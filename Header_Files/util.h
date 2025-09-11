@@ -3,6 +3,7 @@
 #define UTIL_H
 
 #include "boolean.h"
+#include <stdio.h>
 #include "context.h"
 
 
@@ -18,6 +19,16 @@ typedef enum line_type {
     EXTERN_DIRECTIVE_LINE,/**< EXTERN_DIRECTIVE_LINE: An `.extern` directive line, declaring an external label. */
     EMPTY_LINE           /**< EMPTY_LINE: Line is empty after label declaration. */
 } line_type;
+
+
+/**
+ * @enum print_type
+ * @brief Represents the output target.
+ */
+typedef enum print_type {
+    STDOUT,  /**< STDOUT: print to standart output. */
+    FILE_OUT  /**< FILE_OUT: print to provided file. */
+}print_type;
 
 
 
@@ -76,8 +87,10 @@ boolean is_single_word(const char *str);
  * @brief Print an unsigned integer as in binary number in provided bits size.
  * @param num  The number to print.
  * @param bits Number of bits to print (MSB first).
+ * @param dest
+ * @param file
  */
-void print_binary(unsigned int num, int bits);
+void print_binary(unsigned int num, int bits, print_type dest, FILE *file);
 
 /**
  * @brief Classify an input line (instruction / directives / unknown).

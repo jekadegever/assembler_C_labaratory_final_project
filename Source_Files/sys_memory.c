@@ -278,6 +278,7 @@ void free_all_memory(assembler_context *asmContext) {
     safe_free((void**)&asmContext->obj_file_name);
     safe_free((void**)&asmContext->ent_file_name);
     safe_free((void**)&asmContext->as_file_name);
+    safe_free((void**)&asmContext->bin_file_name);
     safe_free((void**)&asmContext->file_path);
     safe_free((void**)&asmContext->am_full_file_name);
     safe_free((void**)&asmContext->as_full_file_name);

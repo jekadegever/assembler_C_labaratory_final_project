@@ -19,6 +19,7 @@
 
 
 
+
 /**
  * @file util.c
  * @brief Utility helpers for the assembler: strings, names/identifiers validation,
@@ -216,18 +217,22 @@ boolean is_single_word(const char *str) {
 }
 
 
-void print_binary(unsigned int num, int bits) {
+void print_binary(unsigned int num, int bits, print_type dest, FILE *file) {
     int i;
 
+    if (dest == FILE_OUT && !file) {
+        print_internal_error(ERROR_CODE_25, "print_binary");
+    }
     for (i = bits - 1; i >= 0; i--) {
         /*prepare the bit mask*/
         unsigned int mask = 1u << i;
         /*get and print the bit value*/
-        putchar((num & mask) ? '1' : '0');
+        dest == STDOUT ?putchar((num & mask) ? '1' : '0'):fputc(((num & mask) ? '1' : '0'),file);
     }
 
 
 }
+
 
 /* 0 -error
  * 1 - instruction

@@ -269,7 +269,7 @@ void print_entry_labels(label_ptr labels_list) {
     while(labels_list != NULL) {
         if (labels_list->is_entry) {
             printf("entry label: %s -> address: \n", labels_list->name);
-            print_binary(labels_list->address,10);
+            print_binary(labels_list->address,10, STDOUT, NULL);
             printf("\n");
         }
         labels_list = labels_list->next;

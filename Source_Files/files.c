@@ -39,6 +39,7 @@ static const char* file_extensions[] = {
     ".ext",
     ".ent",
     ".am",
+    ".bin",
     ""
 };
 /*file access mode*/
@@ -320,6 +321,95 @@ boolean create_obj_file(assembler_context *asmContext) {
 
 }
 
+
+boolean create_bin_file(assembler_context *asmContext) {
+
+    FILE* bin_file;
+    char* bin_file_name = NULL;
+    char* base_4_str = NULL;
+    data_ptr data_memory = NULL;
+    instruction_ptr instruction_memory = NULL;
+    data_ptr data_tmp = NULL;
+    instruction_ptr instruction_tmp = NULL;
+    char* file_path = NULL;
+    char* bin_full_name = NULL;
+
+    /*verify that assembler_context pointer exist*/
+    if (!asmContext) {
+        print_internal_error(ERROR_CODE_25,"create_bin_file");
+        return false;
+    }
+
+    /*extract the data and instruction memory from the context*/
+     data_memory = asmContext->data_memory;
+     instruction_memory = asmContext->instruction_memory;
+
+    /*assign the temp pointer*/
+    data_tmp = data_memory;
+    instruction_tmp = instruction_memory;
+
+    /*allocate memory for temp string that will hold the base 4 letters address*/
+    base_4_str = (char*)handle_malloc(sizeof(char)* (OBJ_FILE_ADDRESS_PRINT_LENGTH > OBJ_FILE_DATA_PRINT_LENGTH ?  OBJ_FILE_ADDRESS_PRINT_LENGTH : OBJ_FILE_DATA_PRINT_LENGTH)+1);
+
+
+    /*prepare the full file path*/
+    bin_file_name = change_file_extension(BIN_FILE, asmContext->as_file_name);
+    file_path = (asmContext->file_path == NULL) ? EMPTY_STRING : asmContext->file_path;
+    bin_full_name = str_concat(file_path, bin_file_name);
+
+    /*create and open the .bin file*/
+    if ((bin_file = open_file(bin_full_name,WRITE)) == NULL) {
+        safe_free((void**)&bin_file_name);
+        safe_free((void**)&base_4_str);
+        safe_free((void**)&bin_full_name);
+        return false;
+    }
+
+    fprintf(bin_file,"\n\n");
+
+    /*print header*/
+    fprintf(bin_file,"\t\t  address\t  data\t\n");
+
+    /*write the first line, instructions and data words amount.*/
+    fprintf(bin_file, "\t\t");
+    print_binary(asmContext->IC, WORD_BIT_SIZE, FILE_OUT, bin_file);
+    fprintf(bin_file,"\t");
+    print_binary(asmContext->DC, WORD_BIT_SIZE, FILE_OUT, bin_file);
+    fprintf(bin_file,"\t\t\n");
+
+    /*- - - print instruction memory - - - */
+    while (instruction_tmp != NULL) {
+        fprintf(bin_file, "\t\t");
+        print_binary(instruction_tmp->address, WORD_BIT_SIZE, FILE_OUT, bin_file);
+        fprintf(bin_file,"\t");
+        print_binary(instruction_tmp->value, WORD_BIT_SIZE, FILE_OUT, bin_file);
+        fprintf(bin_file,"\t\t\n");
+
+        instruction_tmp = instruction_tmp->next;
+    }
+
+    /*- - - print data memory - - -*/
+    while (data_tmp != NULL) {
+        fprintf(bin_file, "\t\t");
+        print_binary(data_tmp->address, WORD_BIT_SIZE, FILE_OUT, bin_file);
+        fprintf(bin_file,"\t");
+        print_binary(data_tmp->value, WORD_BIT_SIZE, FILE_OUT, bin_file);
+        fprintf(bin_file,"\t\t\n");
+
+        data_tmp = data_tmp->next;
+    }
+
+    /*close the file and clear unnecessary allocated memory*/
+    fclose(bin_file);
+    asmContext->bin_file_name = bin_file_name;
+    safe_free((void**)&base_4_str);
+    safe_free((void**)&bin_full_name);
+
+
+    return true;
+
+}
+
 char* change_file_extension(file_type type, const char *as_file_name) {
 
     char* new_file_name = NULL;
@@ -471,30 +561,36 @@ void remove_old_files(assembler_context *asmContext) {
     char* am_file_name = change_file_extension(AM_FILE,asmContext->as_file_name);
     char* ent_file_name  = change_file_extension(ENTRY_FILE,asmContext->as_file_name);
     char* ext_file_name  = change_file_extension(EXTERNAL_FILE,asmContext->as_file_name);
+    char* bin_file_name  = change_file_extension(BIN_FILE,asmContext->bin_file_name);
+
 
     /*get the files full name with directory*/
     char* obj_full_name = str_concat(file_path, obj_file_name);
     char* am_full_name = str_concat(file_path, am_file_name);
     char* ent_full_name = str_concat(file_path, ent_file_name);
     char* ext_full_name = str_concat(file_path, ext_file_name);
+    char* bin_full_name = str_concat(file_path, bin_file_name);
 
     /*remove the files*/
     remove(obj_full_name);
     remove(am_full_name);
     remove(ent_full_name);
     remove(ext_full_name);
+    remove(bin_full_name);
 
     /*free files names*/
     safe_free((void**)&obj_file_name);
     safe_free((void**)&am_file_name);
     safe_free((void**)&ent_file_name);
     safe_free((void**)&ext_file_name);
+    safe_free((void**)&bin_file_name);
 
     /*free full file name with directory*/
     safe_free((void**)&obj_full_name);
     safe_free((void**)&am_full_name);
     safe_free((void**)&ent_full_name);
     safe_free((void**)&ext_full_name);
+    safe_free((void**)&bin_full_name);
 
 
 }

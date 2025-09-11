@@ -86,7 +86,7 @@ void print_instruction_memory(instruction_ptr instruction_memory) {
     /*print the instruction memory in binary format*/
     while (temp != NULL) {
         printf("binary: ");
-        print_binary(temp->value,10);
+        print_binary(temp->value,10, STDOUT, NULL);
         printf("\tdecimal: %d \tin address -> %d\n",temp->value, temp->address);
         temp = temp->next;
     }
