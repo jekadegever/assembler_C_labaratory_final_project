@@ -56,10 +56,7 @@ boolean execute_preprocessor(assembler_context* asmContext) {
 
     /*allocate initial memory for file content buff*/
     am_file_content = handle_malloc(1);
-    if ( !am_file_content) {
-        safe_free((void**)&am_file_content);
-        return false;
-    }
+
     /*set '\0' at index 0 to not access unknown memory while using string functions*/
     am_file_content[0] = '\0';
 
