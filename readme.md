@@ -151,7 +151,8 @@ The assembler supports 16 opcodes. Each opcode is identified by its mnemonic:
 - Valid registers are: `r0`–`r7` (total of 8 registers).
 - Example usage:
 ```asm
-  mov r3, r5   ; copy the value from register r3 into register r5
+ ; copy the value from register r3 into register r5
+  mov r3, r5  
 ```
 - ### 🔢 Constants
 - To use a **constant number** as an operand in an instruction, you must prefix it with `#`.  
@@ -530,9 +531,9 @@ the assembler generates an `.ext` file that lists **all the memory addresses whe
     - The **address in memory** where the symbol was used.
 
 ```bash
-        W       bcbd		
+   	W	bcbd		
 	W	bdbd		
-	L3	cbac		
+	L3	cbac			
 ```
 
 ### 🔑 valid1 entry file (`valid1.ent`):  
@@ -541,7 +542,7 @@ This file is important because it exposes selected symbols as **entry points**,
 allowing them to be referenced as external symbols in other source files during the linkage process.
 
 ```bash
-        LOOP	bdbc		
+   	LOOP	bdbc		
 	LENGTH	cbcd	
 ```
 ---
