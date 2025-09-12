@@ -87,8 +87,8 @@ boolean is_single_word(const char *str);
  * @brief Print an unsigned integer as in binary number in provided bits size.
  * @param num  The number to print.
  * @param bits Number of bits to print (MSB first).
- * @param dest
- * @param file
+ * @param dest print destination (given file or standard output).
+ * @param file FILE pointer if dest is FILE_OUT, NULL otherwise.
  */
 void print_binary(unsigned int num, int bits, print_type dest, FILE *file);
 

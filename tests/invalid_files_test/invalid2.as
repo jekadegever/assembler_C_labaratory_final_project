@@ -7,7 +7,6 @@
         inc r9
 
 ;unknown operations
-        goto r4
         remove data
 
 ;matrix index not register
@@ -16,9 +15,6 @@
 
 ;immediate operand floating point
         add #22.3, r0
-
- ;invalid chars at immediate operand
-        add #!2, MAT1
 
 
 
@@ -36,21 +32,12 @@ MAT2:   .mat
 
  ;matrix format error
          .mat [r[r2] 1
-         .mat {2}{3}
          ;reg instead numeber
          .mat [5][r2] 3,4,5
 
  ;memory overflow
         .mat [30][6] 1,2,3
 
- ;wrong numbers in data dec
-         .mat [3][4] A,3,5.5
-         .data 3,&
-
- ;comma error in data
-         .data 1,2,3,
-         .mat [3][3] ,1,2
-         .data 2,,2
 
  ;too much numbers in mat
          .mat [2][2] 1,2,3,4,5,6

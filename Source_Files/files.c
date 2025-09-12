@@ -561,7 +561,7 @@ void remove_old_files(assembler_context *asmContext) {
     char* am_file_name = change_file_extension(AM_FILE,asmContext->as_file_name);
     char* ent_file_name  = change_file_extension(ENTRY_FILE,asmContext->as_file_name);
     char* ext_file_name  = change_file_extension(EXTERNAL_FILE,asmContext->as_file_name);
-    char* bin_file_name  = change_file_extension(BIN_FILE,asmContext->bin_file_name);
+    char* bin_file_name  = change_file_extension(BIN_FILE,asmContext->as_file_name);
 
 
     /*get the files full name with directory*/
