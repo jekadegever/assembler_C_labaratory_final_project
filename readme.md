@@ -1,6 +1,6 @@
 # 🛠️ C Assembler Project
 
-This project is an **Assembler implementation in C**, developed as part of the course **20465 – 2023B (Open University of Israel)**.  
+This project is an **Assembler implementation in C**, developed as part of the course **20465 – 2025B (Open University of Israel)**.  
 The project implements an assembler for a **custom assembly language**, designed for a **fictional hardware architecture**.
 
 ## 🎯 Project Goals
@@ -688,7 +688,7 @@ Summary: 0 out of 2 files assembled successfully.
 
 ### Ivgeny Tokarzhevsky
 ### Third-year Computer Science / Programming student at the Open University.
-### Project developed for course 20465 – 2024B.
+### Project developed for course 20465 – 2025B.
 
 ---
 
