@@ -661,9 +661,9 @@ Summary: 0 out of 2 files assembled successfully.
     ```
 
 2.  navigate to the project folder:
-   ```bash
+    ```bash
      cd ~/assembler_C_labaratory_final_project
-   ```
+    ```
 
 
 3. compile with the provided makefile:
